@@ -49,9 +49,37 @@ button {
 	margin: 1rem;
 	padding: 0px;
 	text-align: center;
+    
 }
 
 button:hover {
 	background-color: rgb(255, 255, 255);
 	border-color: rgb(214, 204, 11);
+}
+
+h2 {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+.high-score {
+	text-align: start;
+}
+
+.timer {
+	text-align: end;
+}
+
+.intro {
+	display: block;
+}
+
+.quiz {
+	/* display: none;  blocks out quiz for the start screen*/
+	margin: 0 auto;
+	max-width: 40rem;
+}
+
+.startButton {
+	text-align: center;
 }
