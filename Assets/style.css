@@ -30,7 +30,7 @@ section {
 	text-align: center;
 }
 
-.intro h1 {
+.opening h1 {
 	margin-top: 2rem;
 	font-size: 4rem;
 }
@@ -70,7 +70,7 @@ h2 {
 	text-align: end;
 }
 
-.intro {
+.opening {
 	display: block;
 }
 
