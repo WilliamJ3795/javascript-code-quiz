@@ -11,6 +11,13 @@ var question = document.querySelector('#question');
 
 var opening = document.querySelector("#opening");
 var quiz = document.querySelector("#quiz");
+//Initial variables
+
+var score;
+var secondsLeft = 60;
+var questionIndex = 0;
+var timeInt;
+
 
 var questions = [
 	{
