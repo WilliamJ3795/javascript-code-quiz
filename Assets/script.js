@@ -1,16 +1,17 @@
 // elements linked by ID //
-var startButton = document.querySelector("#startBtn");
-var timer = document.querySelector('#timer');
+var startEl = document.querySelector("#startBtn");
+var timerEl = document.querySelector('#timer');
 
-var b1 = document.querySelector('#b1');
-var b2 = document.querySelector('#b2');
-var b3 = document.querySelector('#b3');
-var b4 = document.querySelector('#b4');
+var b1El = document.querySelector('#b1');
+var b2El = document.querySelector('#b2');
+var b3El = document.querySelector('#b3');
+var b4El = document.querySelector('#b4');
 
-var question = document.querySelector('#question');
+var questionEl = document.querySelector('#question');
 
-var opening = document.querySelector("#opening");
-var quiz = document.querySelector("#quiz");
+var openingEl = document.querySelector("#opening");
+var quizEl = document.querySelector("#quiz");
+
 //Initial variables
 
 var score;
@@ -33,7 +34,9 @@ function startTimer() {
                 highScore();
 
             }
-        }, 1000);
+        }, 
+        
+        1000);
     
 };
 
@@ -54,14 +57,3 @@ var questions = [
         q4: "substring()",
         answer: "toLowerCase()",
     }];
-
-    //Start the game 
-startButton.addEventListener("click", startQuiz);
-function startQuiz() {
-	score = 0;
-	startTimer();
-	opening.setAttribute("style", "display: none");
-	quiz.setAttribute("style", "display: block");
-	loadQuestions();
-};
-
