@@ -80,4 +80,15 @@ var questions = [
         q3: 'push()',
         q4: 'some()',
         answer: 'concat()',
-    },];
+    },
+];
+
+//Start quiz
+startButton.addEventListener("click", startQuiz);
+function startQuiz() {
+    score = 0;
+    startTimer();
+    introEl.setAttribute("style", "display: none");
+    quizEl.setAttribute("style", "display: block");
+    loadQuestions();
+};
