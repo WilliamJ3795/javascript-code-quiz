@@ -85,7 +85,8 @@ var questions = [
 
 //Start quiz
 startButton.addEventListener("click", startQuiz);
-function startQuiz() {
+// activates timer and loads questions upon button click
+function startQuiz() { 
     score = 0;
     startTimer();
     introEl.setAttribute("style", "display: none");
