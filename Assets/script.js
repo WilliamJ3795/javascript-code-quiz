@@ -12,23 +12,23 @@ var questionEl = document.querySelector('#question');
 var openingEl = document.querySelector("#opening");
 var quizEl = document.querySelector("#quiz");
 
-//Initial variables
-
+//Intial global variables //
 var score;
 var secondsLeft = 60;
 var questionIndex = 0;
 var timeInt;
 
-//Start the timer
+//Start the timer//
 function startTimer() {
     timeInt = setInterval (
         function() {
             secondsLeft --;
-            timer.textContent = `Timer: ${secondsLeft}`;
+            // grabbing the element in the DOM and using JQuery to access the global var//
+            timerEl.textContent = `Timer: ${secondsLeft}`; 
             if (secondsLeft === 0) {
                 score = 0;
                 clearInterval(timeInt);
-                timer.textContent = " ";
+                timerEl.textContent = " ";
                 alert ("Time's Up!");
                 score = 0;
                 highScore();
@@ -47,7 +47,7 @@ var questions = [
 		q2: "loop()",
 		q3: "forEach()",
 		q4: "None of the above",
-		answer: "forEach()"
+		answer: "forEach()",
 	},
     {
         question: "Which of the following function of String object returns the calling string value converted to lower case?",
@@ -56,4 +56,28 @@ var questions = [
         q3: "toString()",
         q4: "substring()",
         answer: "toLowerCase()",
-    }];
+    },
+    {
+        question: 'How do you write "Hello World" in an alert box?',
+        q1: 'alert("Hello World");',
+        q2: 'msgBox("Hello World");',
+        q3: 'alertBox("Hello World");',
+        q4: 'msg("Hello World");',
+        answer: 'alert("Hello World");',
+    },
+    {
+        question: 'How to append a value to an array of Java Script?',
+        q1: 'arr[arr.length-1] = value',
+        q2: 'arr[arr.length+1] = new Arrays()',
+        q3: 'arr[arr.length] = value',
+        q4: 'arr[arr.length*1] = value',
+        answer: 'arr[arr.length] = value',
+    },
+    {
+        question: 'Which of the following function of Array object returns a new array comprised of this array joined with other array(s) and/or value(s)?',
+        q1: 'concat()',
+        q2: 'pop()',
+        q3: 'push()',
+        q4: 'some()',
+        answer: 'concat()',
+    },];
