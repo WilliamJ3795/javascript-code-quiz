@@ -20,6 +20,8 @@ var timeInt;
 
 //Start the timer//
 function startTimer() {
+
+    console.log("line 23 ~ startTimer", startTimer)
     timeInt = setInterval (
         function() {
             secondsLeft --;
@@ -84,12 +86,23 @@ var questions = [
 ];
 
 //Start quiz
-startButton.addEventListener("click", startQuiz);
+startEl.addEventListener("click", startQuiz);
 // activates timer and loads questions upon button click
 function startQuiz() { 
     score = 0;
     startTimer();
-    introEl.setAttribute("style", "display: none");
+    openingEl.setAttribute("style", "display: none");
     quizEl.setAttribute("style", "display: block");
     loadQuestions();
 };
+
+//load questions based on index
+function loadQuestions() {
+    questionEl.textContent = questions[questionIndex].question;
+    b1El.textContent = `${questions[questionIndex].q1}`;
+    b2El.textContent = `${questions[questionIndex].q2}`;
+    b3El.textContent = `${questions[questionIndex].q3}`;
+    b4El.textContent = `${questions[questionIndex].q4}`;
+
+};
+
