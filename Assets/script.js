@@ -12,6 +12,8 @@ var questionEl = document.querySelector('#question');
 var openingEl = document.querySelector("#opening");
 var quizEl = document.querySelector("#quiz");
 
+var wrongEl = document.querySelector("#wrong");
+
 //Intial global variables //
 var score;
 var secondsLeft = 60;
@@ -85,6 +87,16 @@ var questions = [
     },
 ];
 
+//load questions based on index
+function loadQuestions() {
+    questionEl.textContent = questions[questionIndex].question;
+    b1El.textContent = `${questions[questionIndex].q1}`;
+    b2El.textContent = `${questions[questionIndex].q2}`;
+    b3El.textContent = `${questions[questionIndex].q3}`;
+    b4El.textContent = `${questions[questionIndex].q4}`;
+
+};
+
 //Start quiz
 startEl.addEventListener("click", startQuiz);
 // activates timer and loads questions upon button click
@@ -96,13 +108,52 @@ function startQuiz() {
     loadQuestions();
 };
 
-//load questions based on index
-function loadQuestions() {
-    questionEl.textContent = questions[questionIndex].question;
-    b1El.textContent = `${questions[questionIndex].q1}`;
-    b2El.textContent = `${questions[questionIndex].q2}`;
-    b3El.textContent = `${questions[questionIndex].q3}`;
-    b4El.textContent = `${questions[questionIndex].q4}`;
-
-};
-
+// Checks to see if user clicked an answer so it can be confirmed
+quizEl.addEventListener("click", function (event) {
+	console.log(addEventListener)
+	var element = event.target;
+    // if the element matches the targeted event in the string..//
+    if (element.matches(".quizBtn")) {
+        console.log(element)
+        // check that elements innerText..
+		var check = element.innerText;
+        // if checked element strictly equals a particular set of questions and answer..
+        if (check === questions[questionIndex].answer) {
+            console.log(check)
+            // add 5 seconds to the timer..
+			secondsLeft = secondsLeft + 5;
+            console.log(secondsLeft)
+            // also alert the user their choice was correct..
+            alert("Correct!");
+            console.log(alert)
+			wrongEl.textContent = " ";
+            
+			//Run through the questions
+			var qLength = questions.length - 1;
+			if (questionIndex < qLength) {
+				questionIndex++;
+				loadQuestions();
+			}
+            else {
+	
+				//Ran through all the questions till finish
+				alert("All Done!");
+				score = secondsLeft;
+				clearInterval(timeInt);
+				timerEl.textContent = " ";
+				highScore();
+				}
+            } 
+            else {
+				secondsLeft = secondsLeft - 5;
+				wrongEl.textContent = "Incorrect -5 seconds";
+				if (secondsLeft <= 0) {
+					score = 0;
+					clearInterval(timeInt);
+					timerEl.textContent = " ";
+					alert("Out of Time!");
+					highScore();
+				}
+			}
+		}
+	});
