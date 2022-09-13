@@ -28,5 +28,5 @@ THEN I can save my initials and my score
 The following animation demonstrates the application functionality:
 (Not exactly shown)
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](web-api-quiz.gif.webm)
 
