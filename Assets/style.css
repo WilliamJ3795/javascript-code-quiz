@@ -1,6 +1,7 @@
 
 html {
-	font-size: 62.5%;
+	background-color: darkgray;
+	font-size: 80.5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
@@ -88,8 +89,34 @@ h2 {
 
 /* link elements by ID */
 
+
+.sectionEl {
+	display: block;
+}
+
+.h1El {
+	margin: 0 auto;
+	font-size: 3.5rem;
+	text-align: center;
+
+}
+.h2El {
+	margin: 0 auto;
+	font-size: 3.5rem;
+	text-align: center;
+	text-decoration-color: gold;
+
+}
+
+
+.backLink {
+	font-size: 4rem;
+	text-decoration: none;
+}
+
+
 .wrong {
-	width: 20rem;
+	width: 28rem;
 	margin: 1rem auto;
 	font-size: 2.2rem;
 	color: crimson;
