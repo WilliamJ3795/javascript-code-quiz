@@ -138,6 +138,7 @@ quizEl.addEventListener("click", function (event) {
 	
 				//Ran through all the questions till finish
 				alert("All Done!");
+                //score equals however many secords are left in the game once completed
 				score = secondsLeft;
 				clearInterval(timeInt);
 				timerEl.textContent = " ";
