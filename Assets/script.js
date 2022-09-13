@@ -22,13 +22,13 @@ var timeInt;
 
 //Start the timer//
 function startTimer() {
-
-    console.log("line 23 ~ startTimer", startTimer)
+    console.log(startTimer)
+    
     timeInt = setInterval (
         function() {
             secondsLeft --;
             // grabbing the element in the DOM and using JQuery to access the global var//
-            timerEl.textContent = `Timer: ${secondsLeft}`; 
+            timerEl.textContent = `Timer: ${secondsLeft}`; // using template literals to pull global variable and interpolate into a string
             if (secondsLeft === 0) {
                 score = 0;
                 clearInterval(timeInt);
@@ -40,7 +40,7 @@ function startTimer() {
             }
         }, 
         
-        1000);
+        1000)
     
 };
 
@@ -146,7 +146,7 @@ quizEl.addEventListener("click", function (event) {
             } 
             else {
 				secondsLeft = secondsLeft - 5;
-				wrongEl.textContent = "Incorrect -5 seconds";
+				wrongEl.textContent = "Nope! -5 seconds";
 				if (secondsLeft <= 0) {
 					score = 0;
 					clearInterval(timeInt);
@@ -157,3 +157,24 @@ quizEl.addEventListener("click", function (event) {
 			}
 		}
 	});
+
+
+// i attempted to make elements for the highscore section
+var mainEl = document.querySelector('main');
+var sectionEl = document.createElement("section");
+var h1El = document.createElement("h1");
+var h2El = document.createElement("h2");
+var labelEl = document.createElement("label");
+
+function highScore() {
+	quizEl.setAttribute("style", "display: none");
+
+	 mainEl.appendChild(sectionEl);
+	  sectionEl.appendChild(h1El);
+	  sectionEl.appendChild(h2El);
+	 sectionEl.appendChild(labelEl); 
+
+	h1El.textContent = "Thanks for playing!";
+	h2El.textContent = `Your score is ${score}.`;
+};
+
