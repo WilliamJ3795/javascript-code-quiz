@@ -6,8 +6,7 @@ AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 ```
-
-### Acceptance Criteria
+## Acceptance Criteria
 
 ```
 GIVEN I am taking a code quiz
@@ -22,7 +21,6 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
-
 ## Mock-Up
 
 The following animation demonstrates the application functionality:
@@ -31,4 +29,5 @@ The following animation demonstrates the application functionality:
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](web-api-quiz.gif.webm)
 
 ## Deployment link
+
 https://williamj3795.github.io/javascript-code-quiz/
